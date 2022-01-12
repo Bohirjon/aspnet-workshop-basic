@@ -93,6 +93,9 @@ StyleCopReport.xml
 *.svclog
 *.scc
 
+#rider settings folder
+*.idea
+
 # Chutzpah Test files
 _Chutzpah*
 
