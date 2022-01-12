@@ -15,6 +15,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
+        services.AddBasicDemoCore();
         services.AddOpenApiDocument(settings =>
         {
             settings.Title = "AspNet.BasicDemos";

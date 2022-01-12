@@ -1,10 +1,3 @@
-// var builder = WebApplication.CreateBuilder(args);
-// var app = builder.Build();
-//
-// app.MapGet("/", () => "Sup?!");
-//
-// app.Run();
-
 namespace AspNet.BasicsDemo;
 
 public static class Program
@@ -17,8 +10,5 @@ public static class Program
 
     private static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                webBuilder.UseStartup(typeof(Startup));
-            });
+            .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup(typeof(Startup)); });
 }
