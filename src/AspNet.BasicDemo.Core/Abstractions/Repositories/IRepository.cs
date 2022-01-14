@@ -7,4 +7,5 @@ public interface IRepository<TEntity> where TEntity : BaseEntity
     void Add(TEntity entity);
     Task<bool> Remove(Guid id);
     void Update(TEntity entity);
+    Task SaveChangesAsync();
 }

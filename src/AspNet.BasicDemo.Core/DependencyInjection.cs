@@ -9,5 +9,6 @@ public static class DependencyInjection
 
         serviceCollection.AddScoped<ICompanyService, CompanyService>();
         serviceCollection.AddScoped<ICustomerService, CustomerService>();
+        serviceCollection.AddAutoMapper(Assembly.GetExecutingAssembly());
     }
 }

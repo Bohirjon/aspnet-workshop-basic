@@ -1,5 +1,5 @@
 namespace AspNet.BasicDemo.Core.Abstractions.Repositories;
 
-public interface ICompanyRepository : IRepository<Company>
+public interface ICompanyRepository : IRepository<Entities.Company>
 {
 }

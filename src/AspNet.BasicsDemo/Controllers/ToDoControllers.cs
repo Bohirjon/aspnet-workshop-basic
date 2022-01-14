@@ -1,7 +1,7 @@
 namespace AspNet.BasicsDemo.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("[controller]")]
 public class ToDoControllers : ControllerBase
 {
     [HttpGet("{a:int}/{b:int}")]

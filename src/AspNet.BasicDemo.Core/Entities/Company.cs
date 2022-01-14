@@ -1,4 +1,4 @@
-﻿namespace AspNet.BasicDemo.Core.Model;
+﻿namespace AspNet.BasicDemo.Core.Entities;
 
 public class Company : BaseEntity
 {

@@ -1,4 +1,4 @@
-namespace AspNet.BasicDemo.Core.Repositories;
+namespace AspNet.BasicDemo.Core.Abstractions;
 
 public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
 {
@@ -23,4 +23,6 @@ public abstract class BaseRepository<TEntity> : IRepository<TEntity> where TEnti
     }
 
     public void Update(TEntity entity) => Context.Update(entity);
+
+    public Task SaveChangesAsync() => Context.SaveChangesAsync();
 }
