@@ -6,7 +6,7 @@ public class CustomerService : ICustomerService
     private readonly ILogger _logger;
     private readonly IMapper _mapper;
 
-    public CustomerService(ICustomerRepository customerRepository, IMapper mapper, ILogger logger)
+    public CustomerService(ICustomerRepository customerRepository, IMapper mapper, ILogger<CustomerService> logger)
     {
         _customerRepository = customerRepository;
         _mapper = mapper;
@@ -32,7 +32,7 @@ public class CustomerService : ICustomerService
 
     public async Task<CustomerViewModel> CreateCustomer(CreateCustomerCommand createCustomerCommand)
     {
-        _logger.LogInformation("Creating ");
+         _logger.LogInformation($"Creating customer {createCustomerCommand.Name}");
         var customer = _mapper.Map<Entities.Customer>(createCustomerCommand);
         _customerRepository.Add(customer);
         await _customerRepository.SaveChangesAsync();

@@ -6,7 +6,7 @@ public class CompanyService : ICompanyService
     private readonly ILogger _logger;
     private readonly IMapper _mapper;
 
-    public CompanyService(ICompanyRepository companyRepository, ILogger logger, IMapper mapper)
+    public CompanyService(ICompanyRepository companyRepository, ILogger<CompanyService> logger, IMapper mapper)
     {
         _companyRepository = companyRepository;
         _logger = logger;

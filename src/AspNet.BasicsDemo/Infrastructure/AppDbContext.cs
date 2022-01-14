@@ -2,6 +2,10 @@
 
 public sealed class AppDbContext : DbContext, IContext
 {
+    public AppDbContext(DbContextOptions options) : base(options)
+    {
+    }
+
     public DbSet<Company> Companies { get; set; }
     public DbSet<Customer> Customers { get; set; }
 

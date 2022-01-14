@@ -1,5 +1,3 @@
-using AspNet.BasicsDemo.Infrastructure;
-
 namespace AspNet.BasicsDemo;
 
 public static class DependencyInjection

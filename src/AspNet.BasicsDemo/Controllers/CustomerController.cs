@@ -18,10 +18,10 @@ public class CustomerController : ControllerBase
     public Task<CustomerViewModel> GetById(Guid id) => _customerService.GetCustomerById(id);
 
     [HttpPost]
-    public Task<CustomerViewModel> Post([FromBody] CreateCustomerCommand command) => _customerService.CreateCustomer(command);
+    public Task<CustomerViewModel> Post(CreateCustomerCommand command) => _customerService.CreateCustomer(command);
 
     [HttpPatch]
-    public Task<CustomerViewModel> Patch([FromBody] UpdateCustomerInfoCommand command) => _customerService.UpdateCustomer(command);
+    public Task<CustomerViewModel> Patch(UpdateCustomerInfoCommand command) => _customerService.UpdateCustomer(command);
 
     [HttpDelete("{id:guid}")]
     public async Task<IActionResult> Delete(Guid id)

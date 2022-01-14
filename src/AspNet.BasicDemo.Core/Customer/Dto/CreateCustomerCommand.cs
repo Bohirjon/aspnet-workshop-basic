@@ -6,7 +6,7 @@ public class CreateCustomerCommand : IMapFrom
     public string Address { get; set; }
     public string Email { get; set; }
     public string Phone { get; set; }
-    public Guid CustomerId { get; set; }
+    public Guid CompanyId { get; set; }
 
     public void Map(Profile profile)
     {
@@ -15,6 +15,6 @@ public class CreateCustomerCommand : IMapFrom
             .ForMember(customer => customer.Address, expression => expression.MapFrom(command => command.Address))
             .ForMember(customer => customer.Email, expression => expression.MapFrom(command => command.Email))
             .ForMember(customer => customer.Phone, expression => expression.MapFrom(command => command.Phone))
-            .ForMember(customer => customer.Id, expression => expression.MapFrom(command => command.CustomerId));
+            .ForMember(customer => customer.CompanyId, expression => expression.MapFrom(command => command.CompanyId));
     }
 }

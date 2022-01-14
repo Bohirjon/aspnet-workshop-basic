@@ -18,10 +18,10 @@ public class CompanyController : ControllerBase
     public Task<CompanyViewModel> GetById(Guid id) => _companyService.GetCompanyById(id);
 
     [HttpPost]
-    public Task<CompanyViewModel> Post([FromBody] CreateCompanyCommand command) => _companyService.CreateCompany(command);
+    public Task<CompanyViewModel> Post(CreateCompanyCommand command) => _companyService.CreateCompany(command);
 
-    [HttpPatch("{id:guid}")]
-    public async Task<IActionResult> Patch(Guid id, [FromBody] UpdateCompanyInfoCommand command)
+    [HttpPatch]
+    public async Task<IActionResult> Patch(UpdateCompanyInfoCommand command)
     {
         var found = await _companyService.UpdateCompanyInfo(command);
         return found ? Ok() : NotFound();

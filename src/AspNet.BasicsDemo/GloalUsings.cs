@@ -7,3 +7,5 @@ global using AspNet.BasicDemo.Core.Company.Dto;
 global using AspNet.BasicDemo.Core.Entities;
 global using AspNet.BasicDemo.Core.Customer.Dto;
 global using AspNet.BasicDemo.Core.Abstractions;
+global using AspNet.BasicsDemo.Infrastructure;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
