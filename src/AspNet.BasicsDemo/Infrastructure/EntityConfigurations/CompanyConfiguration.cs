@@ -1,4 +1,3 @@
-using AspNet.BasicDemo.Core.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AspNet.BasicsDemo.Infrastructure.EntityConfigurations;

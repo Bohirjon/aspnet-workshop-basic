@@ -6,3 +6,4 @@ global using AspNet.BasicDemo.Core.Abstractions.Services;
 global using AspNet.BasicDemo.Core.Company.Dto;
 global using AspNet.BasicDemo.Core.Entities;
 global using AspNet.BasicDemo.Core.Customer.Dto;
+global using AspNet.BasicDemo.Core.Abstractions;

@@ -1,7 +1,4 @@
-﻿using AspNet.BasicDemo.Core.Abstractions;
-using AspNet.BasicDemo.Core.Entities;
-
-namespace AspNet.BasicsDemo.Infrastructure;
+﻿namespace AspNet.BasicsDemo.Infrastructure;
 
 public sealed class AppDbContext : DbContext, IContext
 {

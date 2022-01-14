@@ -1,5 +1,4 @@
-﻿
-namespace AspNet.BasicsDemo.Controllers;
+﻿namespace AspNet.BasicsDemo.Controllers;
 
 [ApiController]
 [Route("[controller]")]
