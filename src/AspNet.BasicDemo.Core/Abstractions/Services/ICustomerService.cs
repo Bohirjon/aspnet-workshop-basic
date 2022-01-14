@@ -6,5 +6,5 @@ public interface ICustomerService
     Task<CustomerViewModel> GetCustomerById(Guid id);
     Task<CustomerViewModel> CreateCustomer(CreateCustomerCommand createCustomerCommand);
     Task<CustomerViewModel> UpdateCustomer(UpdateCustomerInfoCommand updateCustomerInfoCommand);
-    Task<bool> DeleteCustomer(Guid customerId);
+    Task DeleteCustomer(Guid customerId);
 }

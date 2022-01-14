@@ -21,16 +21,8 @@ public class CompanyController : ControllerBase
     public Task<CompanyViewModel> Post(CreateCompanyCommand command) => _companyService.CreateCompany(command);
 
     [HttpPatch]
-    public async Task<IActionResult> Patch(UpdateCompanyInfoCommand command)
-    {
-        var found = await _companyService.UpdateCompanyInfo(command);
-        return found ? Ok() : NotFound();
-    }
+    public Task Patch(UpdateCompanyInfoCommand command) => _companyService.UpdateCompanyInfo(command);
 
     [HttpDelete("{id:guid}")]
-    public async Task<IActionResult> Delete(Guid id)
-    {
-        var found = await _companyService.DeleteCompany(id);
-        return found ? Ok() : NotFound();
-    }
+    public Task Delete(Guid id) => _companyService.DeleteCompany(id);
 }

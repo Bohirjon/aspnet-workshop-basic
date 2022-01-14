@@ -1,3 +1,5 @@
+using AspNet.BasicDemo.Core.Exceptions;
+
 namespace AspNet.BasicDemo.Core.Company;
 
 public class CompanyService : ICompanyService
@@ -40,26 +42,25 @@ public class CompanyService : ICompanyService
         return companyViewModel;
     }
 
-    public async Task<bool> UpdateCompanyInfo(UpdateCompanyInfoCommand updateCompanyInfoCommand)
+    public async Task UpdateCompanyInfo(UpdateCompanyInfoCommand updateCompanyInfoCommand)
     {
         _logger.LogInformation($"Updating company {updateCompanyInfoCommand.CompanyId}");
         var company = await _companyRepository.Get(updateCompanyInfoCommand.CompanyId);
-        if (company is not null)
-        {
-            _mapper.Map(updateCompanyInfoCommand, company);
-            _companyRepository.Update(company);
-            await _companyRepository.SaveChangesAsync();
-            return true;
-        }
+        if (company is null)
+            throw new NotFoundException(nameof(Entities.Company), updateCompanyInfoCommand.CompanyId);
 
-        return false;
+        _mapper.Map(updateCompanyInfoCommand, company);
+        _companyRepository.Update(company);
+        await _companyRepository.SaveChangesAsync();
     }
 
-    public async Task<bool> DeleteCompany(Guid companyId)
+    public async Task DeleteCompany(Guid companyId)
     {
         _logger.LogInformation($"Deleting company {companyId}");
         var exists = await _companyRepository.Remove(companyId);
-        if (exists) await _companyRepository.SaveChangesAsync();
-        return exists;
+        if (!exists)
+            throw new NotFoundException(nameof(Entities.Company), companyId);
+
+        await _companyRepository.SaveChangesAsync();
     }
 }

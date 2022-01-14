@@ -9,3 +9,6 @@ global using AspNet.BasicDemo.Core.Customer.Dto;
 global using AspNet.BasicDemo.Core.Abstractions;
 global using AspNet.BasicsDemo.Infrastructure;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using AspNet.BasicDemo.Core.Exceptions;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using AspNet.BasicsDemo.Filters;

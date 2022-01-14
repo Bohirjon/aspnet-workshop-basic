@@ -24,9 +24,5 @@ public class CustomerController : ControllerBase
     public Task<CustomerViewModel> Patch(UpdateCustomerInfoCommand command) => _customerService.UpdateCustomer(command);
 
     [HttpDelete("{id:guid}")]
-    public async Task<IActionResult> Delete(Guid id)
-    {
-        var exists = await _customerService.DeleteCustomer(id);
-        return exists ? Ok() : NotFound();
-    }
+    public Task Delete(Guid id) => _customerService.DeleteCustomer(id);
 }
