@@ -18,7 +18,7 @@ public class CompanyService : ICompanyService
         _logger.LogInformation("Getting companies");
         var companies = await _companyRepository.GetAll();
         var companyViewModels = _mapper.Map<List<CompanyViewModel>>(companies);
-        _logger.LogInformation(message: $"{companies.Count} companies found");
+        _logger.LogInformation($"{companies.Count} companies found");
         return companyViewModels;
     }
 
