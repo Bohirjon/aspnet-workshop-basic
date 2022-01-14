@@ -8,30 +8,15 @@ public sealed class AppDbContext : DbContext, IContext
     public DbSet<Company> Companies { get; set; }
     public DbSet<Customer> Customers { get; set; }
 
-    public IQueryable<T> Set<T>() where T : class
-    {
-        throw new NotImplementedException();
-    }
+    public new IQueryable<T> Set<T>() where T : class => base.Set<T>();
 
-    public void Add(object entity)
-    {
-        throw new NotImplementedException();
-    }
+    public new void Add(object entity) => base.Add(entity);
 
-    public void Remove(object entity)
-    {
-        throw new NotImplementedException();
-    }
+    public new void Remove(object entity) => base.Remove(entity);
 
-    public void Update(object entity)
-    {
-        throw new NotImplementedException();
-    }
+    public new void Update(object entity) => base.Update(entity);
 
-    public Task<int> SaveChangesAsync()
-    {
-        throw new NotImplementedException();
-    }
+    public Task<int> SaveChangesAsync() => base.SaveChangesAsync();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
