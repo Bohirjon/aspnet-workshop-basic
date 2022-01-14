@@ -1,4 +1,4 @@
-namespace AspNet.BasicDemo.Core.Company;
+namespace AspNet.BasicDemo.Core.Repositories;
 
 public class CompanyRepository : BaseRepository<Entities.Company>, ICompanyRepository
 {

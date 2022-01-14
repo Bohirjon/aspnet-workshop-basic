@@ -12,3 +12,4 @@ global using Microsoft.Extensions.Logging;
 global using System.Reflection;
 global using AspNet.BasicDemo.Core.AutoMapperProfiles;
 global using AspNet.BasicDemo.Core.Entities;
+global using AspNet.BasicDemo.Core.Repositories;

@@ -32,7 +32,7 @@ public class CustomerService : ICustomerService
 
     public async Task<CustomerViewModel> CreateCustomer(CreateCustomerCommand createCustomerCommand)
     {
-         _logger.LogInformation($"Creating customer {createCustomerCommand.Name}");
+        _logger.LogInformation($"Creating customer {createCustomerCommand.Name}");
         var customer = _mapper.Map<Entities.Customer>(createCustomerCommand);
         _customerRepository.Add(customer);
         await _customerRepository.SaveChangesAsync();
