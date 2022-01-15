@@ -10,8 +10,7 @@ public class Startup
         _configuration = configuration;
         _webHostEnvironment = webHostEnvironment;
     }
-
-
+    
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers(options => options.Filters.Add<ApiExceptionFilterAttribute>());
